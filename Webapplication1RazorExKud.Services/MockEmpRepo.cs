@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Webapplication1RazorExKud.Models;
+
+namespace Webapplication1RazorExKud.Services
+{
+    public class MockEmpRepo : IEmployeeRepository
+    {
+        private List<Employee> employeeList;
+
+        public MockEmpRepo()
+        {
+            employeeList = new List<Employee>()
+            {
+                new Employee{ID=1, Name= "Samu", Department=Dept.IT,Photopath="Flower1.jpg",Email="aa@gmail.com" },
+                new Employee{ID=2, Name= "Ramu", Department=Dept.HR,Email="bb@gmail.com"}
+            };
+        }
+        public IEnumerable<Employee> GetallEmployees()
+        {
+            return employeeList;
+        }
+    }
+}

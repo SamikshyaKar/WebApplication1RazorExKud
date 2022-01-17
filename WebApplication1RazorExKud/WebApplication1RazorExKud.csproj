@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <Compile Remove="Pages\NewFolder1\**" />
+    <Content Remove="NewFolder\**" />
+    <Content Remove="Pages\NewFolder1\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <EmbeddedResource Remove="Pages\NewFolder1\**" />
+    <None Remove="NewFolder\**" />
+    <None Remove="Pages\NewFolder1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Webapplication1RazorExKud.Models\Webapplication1RazorExKud.Models.csproj" />
+    <ProjectReference Include="..\Webapplication1RazorExKud.Services\Webapplication1RazorExKud.Services.csproj" />
+  </ItemGroup>
+
+</Project>
