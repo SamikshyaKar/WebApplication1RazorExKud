@@ -20,9 +20,16 @@ namespace WebApplication1RazorExKud.Pages.Employees
 
         public Employee EmpDetailsProp { get; private set; }
 
-        public void OnGet( int id)
+        public IActionResult OnGet( int id)
         {
            EmpDetailsProp=  _empDetailskrepo.GetGemployeebyID(id);
+
+            if(EmpDetailsProp ==null)
+            {
+                return RedirectToPage("/EmployeeNotFound");
+            }
+
+            return Page();
         }
     }
 }
