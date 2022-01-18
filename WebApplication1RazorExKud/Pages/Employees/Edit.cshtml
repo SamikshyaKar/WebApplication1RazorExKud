@@ -1,0 +1,53 @@
+﻿
+
+@page
+
+@using Webapplication1RazorExKud.Models
+
+@model WebApplication1RazorExKud.Pages.Employees.EditModel
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<h1>Edit Employee</h1>
+
+<form method="post" class="mt-3">
+
+    <input hidden asp-for="EmpEditProp.ID" />
+
+
+    <div class="form-group row">
+        <label asp-for="EmpEditProp.Name" class="col-sm-2 col-form-label">
+        </label>
+        <div class="col-sm-10">
+            <input asp-for="EmpEditProp.Name" class="form-control" placeholder="Name">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="EmpEditProp.Email" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="EmpEditProp.Email" class="form-control" placeholder="Email">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="EmpEditProp.Department" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <select asp-for="EmpEditProp.Department" class="custom-select mr-sm-2"
+                    asp-items="Html.GetEnumSelectList<Dept>()">
+                <option value="">Please Select</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a asp-page="/Employees/Index" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+
+
+
+
+</form>

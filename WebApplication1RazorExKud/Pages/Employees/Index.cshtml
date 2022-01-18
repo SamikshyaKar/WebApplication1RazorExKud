@@ -26,10 +26,11 @@
 
             <div class="card-footer text-center">
                 @*<a href="#" class="btn btn-primary m-1">View</a>*@
-                <a asp-page="/Employees/Details" asp-route-ID="@employee.ID"  class="btn btn-primary m-1">View</a>
+                <a asp-page="/Employees/Details" asp-route-ID="@employee.ID" class="btn btn-primary m-1">View</a>
                 @*<a asp-page="/Employee/Details" asp-route-ID="@employee.ID"
-                   class="btn btn-primary m-1">View</a>*@
-                <a href="#" class="btn btn-primary m-1">Edit</a>
+        class="btn btn-primary m-1">View</a>*@
+                @*<a href="#" class="btn btn-primary m-1">Edit</a>*@
+                <a asp-page="/Employees/Edit" asp-route-ID="@employee.ID" class="btn btn-primary m-1">Edit</a>
                 <a href="#" class="btn btn-danger m-1">Delete</a>
             </div>
         </div>
