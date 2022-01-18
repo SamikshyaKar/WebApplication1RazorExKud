@@ -28,5 +28,18 @@ namespace Webapplication1RazorExKud.Services
         {
             return employeeList.FirstOrDefault(e => e.ID == ID);
         }
+
+        public Employee Update(Employee updatedEmployee)
+        {
+            Employee employee = employeeList
+                .FirstOrDefault(e => e.ID == updatedEmployee.ID);
+            if (employee != null)
+            {
+                employee.Name = updatedEmployee.Name;
+                employee.Email = updatedEmployee.Email;
+                employee.Department = updatedEmployee.Department;
+            }
+            return employee;
+        }
     }
 }

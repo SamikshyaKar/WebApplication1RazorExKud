@@ -11,16 +11,20 @@ namespace WebApplication1RazorExKud.Pages.Employees
 {
     public class IndexModel : PageModel
     {
-        private readonly IEmployeeRepository _empro;
+        private readonly IEmployeeRepository employeeRepository;
 
-        public IEnumerable<Employee> EmpProp { get; set; }
+
+        public IEnumerable<Employee> Employees { get; set; }
+
+
         public IndexModel(IEmployeeRepository employeeRepository)
         {
-            this._empro = employeeRepository;
+            this.employeeRepository = employeeRepository;
         }
+
         public void OnGet()
         {
-            EmpProp = _empro.GetallEmployees();
+            Employees = employeeRepository.GetallEmployees();
         }
     }
 }

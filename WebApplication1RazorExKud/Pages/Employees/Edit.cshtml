@@ -1,8 +1,8 @@
 ﻿
 
-@page
+@page  "{id:min(1)}"
 
-@using Webapplication1RazorExKud.Models
+
 
 @model WebApplication1RazorExKud.Pages.Employees.EditModel
 @{
@@ -13,27 +13,27 @@
 
 <form method="post" class="mt-3">
 
-    <input hidden asp-for="EmpEditProp.ID" />
+    <input hidden asp-for="Employee.ID" />
 
 
     <div class="form-group row">
-        <label asp-for="EmpEditProp.Name" class="col-sm-2 col-form-label">
+        <label asp-for="Employee.Name" class="col-sm-2 col-form-label">
         </label>
         <div class="col-sm-10">
-            <input asp-for="EmpEditProp.Name" class="form-control" placeholder="Name">
+            <input asp-for="Employee.Name" class="form-control" placeholder="Name">
         </div>
     </div>
     <div class="form-group row">
-        <label asp-for="EmpEditProp.Email" class="col-sm-2 col-form-label"></label>
+        <label asp-for="Employee.Email" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <input asp-for="EmpEditProp.Email" class="form-control" placeholder="Email">
+            <input asp-for="Employee.Email" class="form-control" placeholder="Email">
         </div>
     </div>
 
     <div class="form-group row">
-        <label asp-for="EmpEditProp.Department" class="col-sm-2 col-form-label"></label>
+        <label asp-for="Employee.Department" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <select asp-for="EmpEditProp.Department" class="custom-select mr-sm-2"
+            <select asp-for="Employee.Department" class="custom-select mr-sm-2"
                     asp-items="Html.GetEnumSelectList<Dept>()">
                 <option value="">Please Select</option>
             </select>
@@ -46,8 +46,4 @@
             <a asp-page="/Employees/Index" class="btn btn-primary">Cancel</a>
         </div>
     </div>
-
-
-
-
 </form>

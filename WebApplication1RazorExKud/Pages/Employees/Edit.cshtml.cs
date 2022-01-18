@@ -11,23 +11,36 @@ namespace WebApplication1RazorExKud.Pages.Employees
 {
     public class EditModel : PageModel
     {
-        private readonly IEmployeeRepository Editemprepo;
+        private readonly IEmployeeRepository employeeRepository;
 
         public EditModel(IEmployeeRepository employeeRepository)
         {
-            this.Editemprepo = employeeRepository;
+            this.employeeRepository = employeeRepository;
         }
 
-        public Employee EmpEditProp { get; set; }
+        // This is the property the display template will use to
+        // display existing Employee data
+
+
+        public Employee Employee { get; private set; }
+
+        // Populate Employee property
         public IActionResult OnGet(int id)
         {
-            EmpEditProp = Editemprepo.GetGemployeebyID(id);
-            if (EmpEditProp == null)
+            Employee = employeeRepository.GetGemployeebyID(id);
+
+            if (Employee == null)
             {
                 return RedirectToPage("/EmployeeNotFound");
             }
 
             return Page();
+        }
+
+        public IActionResult OnPost(Employee employee)
+        {
+            Employee = employeeRepository.Update(employee);
+            return RedirectToPage("Index");
         }
     }
 }

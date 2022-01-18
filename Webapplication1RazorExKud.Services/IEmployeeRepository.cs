@@ -10,5 +10,7 @@ namespace Webapplication1RazorExKud.Services
         IEnumerable<Employee> GetallEmployees();
         Employee GetGemployeebyID(int ID);
 
+        Employee Update(Employee updatedEmployee);
+
     }
 }
