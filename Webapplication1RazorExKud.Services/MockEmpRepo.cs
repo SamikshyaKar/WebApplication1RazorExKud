@@ -23,5 +23,10 @@ namespace Webapplication1RazorExKud.Services
         {
             return employeeList;
         }
+
+        public Employee GetGemployeebyID(int ID)
+        {
+            return employeeList.FirstOrDefault(e => e.ID == ID);
+        }
     }
 }
